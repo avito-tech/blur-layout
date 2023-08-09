@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".demo.MainActivity">
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    tools:ignore="ContentDescription,HardcodedText">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.avito.android.blur_layout.BlurLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        app:blurLayout_blurRadius="25"
+        app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+        app:blurLayout_targetChildId="@id/blurred_background_view">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:text="Text behind\nblurred background"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_avito_logo" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/ic_avito_logo" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="end|bottom"
+            app:srcCompat="@drawable/ic_avito_logo" />
+
+        <View
+            android:id="@+id/blurred_background_view"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="#99C1C1C1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="36dp"
+            android:text="Text in front of\nblurred background"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            app:srcCompat="@drawable/ic_avito_logo" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="end"
+            app:srcCompat="@drawable/ic_avito_logo" />
+
+    </com.avito.android.blur_layout.BlurLayout>
+</FrameLayout>
