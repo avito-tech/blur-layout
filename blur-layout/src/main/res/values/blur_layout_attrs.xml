@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurLayout">
+        <attr name="blurLayout_targetChildId" format="reference" />
+        <attr name="blurLayout_blurRadius" format="integer" />
+        <attr name="blurLayout_targetChildBackgroundCornerRadius" format="dimension" />
+    </declare-styleable>
+</resources>
