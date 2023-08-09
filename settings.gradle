@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "blur-layout"
 include ':app'
 include ':blur-layout'
+include ':renderscript-toolkit'
