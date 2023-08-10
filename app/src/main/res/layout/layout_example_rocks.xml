@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.avito.android.blur_layout.BlurLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_rocks"
+    android:padding="16dp"
+    app:blurLayout_blurRadius="25"
+    app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:layout_margin="32dp"
+        android:background="#80FFFFFF"
+        android:gravity="center"
+        android:shadowColor="@color/black"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="24"
+        android:text="BlurLayout"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
+
+</com.avito.android.blur_layout.BlurLayout>

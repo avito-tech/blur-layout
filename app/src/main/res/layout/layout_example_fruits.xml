@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.avito.android.blur_layout.BlurLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    app:blurLayout_blurRadius="25"
+    app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+    app:blurLayout_targetChildId="@id/blurred_background_view"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="140dp"
+        android:src="@drawable/ic_apple" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="140dp"
+        android:src="@drawable/ic_orange" />
+
+    <ImageView
+        android:id="@+id/blurred_background_view"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="#80FFFFFF"
+        android:padding="100dp"
+        app:srcCompat="@drawable/ic_avito_logo" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="140dp"
+        android:src="@drawable/ic_strawberry" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="140dp"
+        android:src="@drawable/ic_bananas" />
+
+</com.avito.android.blur_layout.BlurLayout>

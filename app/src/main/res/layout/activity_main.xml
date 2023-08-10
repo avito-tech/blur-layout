@@ -1,76 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity"
-    tools:ignore="ContentDescription,HardcodedText">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
 
-    <com.avito.android.blur_layout.BlurLayout
+    <Button
+        android:id="@+id/button_rocks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:blurLayout_blurRadius="25"
-        app:blurLayout_targetChildBackgroundCornerRadius="16dp"
-        app:blurLayout_targetChildId="@id/blurred_background_view">
+        android:layout_marginHorizontal="16dp"
+        android:text="Rocks" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="36dp"
-            android:gravity="center"
-            android:text="Text behind\nblurred background"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/button_fruits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Fruits" />
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_avito_logo" />
+    <include
+        android:id="@+id/example_rocks"
+        layout="@layout/layout_example_rocks"
+        android:visibility="gone" />
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            app:srcCompat="@drawable/ic_avito_logo" />
+    <include
+        android:id="@+id/example_fruits"
+        layout="@layout/layout_example_fruits"
+        android:visibility="gone" />
 
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="end|bottom"
-            app:srcCompat="@drawable/ic_avito_logo" />
-
-        <View
-            android:id="@+id/blurred_background_view"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="#99C1C1C1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="36dp"
-            android:text="Text in front of\nblurred background"
-            android:textAlignment="center"
-            android:textSize="24sp" />
-
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="bottom"
-            app:srcCompat="@drawable/ic_avito_logo" />
-
-        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="end"
-            app:srcCompat="@drawable/ic_avito_logo" />
-
-    </com.avito.android.blur_layout.BlurLayout>
-</FrameLayout>
+</LinearLayout>
