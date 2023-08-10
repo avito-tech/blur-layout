@@ -12,9 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        BlurLayout.onApplyBlur = { bitmap, blurRadius ->
-            Toolkit.blur(inputBitmap = bitmap, radius = blurRadius)
-        }
+        BlurLayout.init(
+            onApplyBlur = { bitmap, blurRadius ->
+                Toolkit.blur(inputBitmap = bitmap, radius = blurRadius)
+            },
+        )
 
         val buttons = mutableListOf<View>()
 

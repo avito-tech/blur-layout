@@ -49,12 +49,18 @@ class BlurLayout @JvmOverloads constructor(
     }
 
     companion object {
+        private lateinit var onApplyBlur: (bitmap: Bitmap, blurRadius: Int) -> Bitmap
+
         /**
-         * Transformer to apply blur effect to a bitmap with certain blur radius.
-         * External blur effect applier is used because there are several ways to apply blur to a bitmap (like the
-         * Google's lib com.google.android.renderscript.Toolkit).
+         * @param onApplyBlur Transformer to apply blur effect to a bitmap with certain blur radius.
+         * External blur effect applier is used as there are several ways to apply blur to a bitmap
+         * (like the Google's lib com.google.android.renderscript.Toolkit).
          */
-        lateinit var onApplyBlur: (bitmap: Bitmap, blurRadius: Int) -> Bitmap
+        fun init(
+            onApplyBlur: (bitmap: Bitmap, blurRadius: Int) -> Bitmap,
+        ) {
+            this.onApplyBlur = onApplyBlur
+        }
     }
 
     private var targetChildId: Int? = null
