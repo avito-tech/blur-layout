@@ -98,14 +98,14 @@ For the full example refer to
 
 ```kotlin
 BlurLayout(context = this).apply {
-    // add children
+   // add children
 }.setBlurredBackgroundForTargetChild(
-    targetChild = TODO("Can be omitted if single child"),
-    blurRadius = TODO(
-        "Can be omitted if target view implements BlurLayout.BlurRadiusProvider"
-    ),
-    targetChildBackgroundCornerRadius = TODO(
-        "Can be omitted if target view implements BlurLayout.CornerRadiusProvider"
-    )
+   targetChild = TODO("Might be omitted if single child"),
+   blurRadius = TODO(
+      "Might be omitted if target view implements BlurLayout.BlurRadiusProvider"
+   ),
+   targetChildBackgroundCornerRadius = TODO(
+      "Might be omitted if target view implements BlurLayout.CornerRadiusProvider"
+   )
 )
 ```
