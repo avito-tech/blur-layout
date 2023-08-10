@@ -141,6 +141,11 @@ class BlurLayout @JvmOverloads constructor(
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
 
+        // Draw BlurLayout's background first
+        background.apply {
+            setBounds(0, 0, width, height)
+        }.draw(canvas)
+
         for (child in children) {
             val isTargetChild = child == targetChild
             canvas.withTranslation(child.left.toFloat(), child.top.toFloat()) {
