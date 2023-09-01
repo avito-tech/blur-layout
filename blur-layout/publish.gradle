@@ -1,0 +1,70 @@
+android {
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
+    libraryVariants
+            .matching { it.name == "release" }
+            .configureEach {
+                project.publishing {
+                    publications {
+                        register("release", MavenPublication) {
+                            artifactId = "blur-layout"
+                            groupId = parent.group
+                            version = parent.version
+
+                            from(components["release"])
+                        }
+                    }
+                }
+            }
+}
+
+publishing {
+    publications.withType(MavenPublication).configureEach {
+        pom {
+            name.set("BlurLayout")
+            description.set("FrameLayout extension to support blurred semitransparent backgrounds in Android")
+            url.set("https://github.com/avito-tech/blur-layout")
+            licenses {
+                license {
+                    name.set("MIT License")
+                    url.set("https://github.com/avito-tech/blur-layout/blob/main/LICENSE")
+                }
+            }
+            developers {
+                developer {
+                    id.set("aakorolev")
+                    name.set("Aleksandr Korolev")
+                    email.set("aakorolev@avito.ru")
+                }
+                developer {
+                    id.set("ivsolkin")
+                    name.set("Igor Solkin")
+                    email.set("ivsolkin@avito.ru")
+                }
+                developer {
+                    id.set("poignatov")
+                    name.set("Pavel Ignatov")
+                    email.set("poignatov@avito.ru")
+                }
+            }
+            scm {
+                url.set("https://github.com/avito-tech/blur-layout")
+            }
+        }
+    }
+}
+
+signing {
+    sign(project.publishing.publications)
+
+    def signingKeyId = providers.gradleProperty("avito.pgp.keyid").orNull
+    def signingKey = providers.gradleProperty("avito.pgp.key").orNull
+    def signingPassword = providers.gradleProperty("avito.pgp.password").orNull
+
+    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+}

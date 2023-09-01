@@ -1,11 +1,16 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'signing'
+    id 'maven-publish'
 }
+
+apply from: "./publish.gradle"
 
 android {
     namespace 'com.avito.android.blur_layout'
     compileSdk 33
+    buildToolsVersion = providers.gradleProperty("buildToolsVersion").get()
 
     defaultConfig {
         minSdk 21

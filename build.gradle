@@ -3,4 +3,22 @@ plugins {
     id 'com.android.application' version '8.0.1' apply false
     id 'com.android.library' version '8.0.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
+    id 'io.github.gradle-nexus.publish-plugin' version '1.3.0' apply true
+}
+
+def projectVersion = providers.gradleProperty("projectVersion").orNull
+assert(projectVersion != null)
+
+// nexus publish plugin uses root version to determine whether it should be uploaded to snapshot URL
+version = projectVersion
+group = "com.avito.android"
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            username = providers.gradleProperty("avito.ossrh.user").orNull
+            password = providers.gradleProperty("avito.ossrh.password").orNull
+            stagingProfileId = providers.gradleProperty("avito.ossrh.stagingProfileId").orNull
+        }
+    }
 }
