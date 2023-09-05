@@ -6,6 +6,8 @@ plugins {
 android {
     namespace 'com.google.android.renderscript'
     compileSdk 33
+    buildToolsVersion = providers.gradleProperty("buildToolsVersion").get()
+    ndkVersion = providers.gradleProperty("ndkVersion").get()
 
     defaultConfig {
         minSdk 16
