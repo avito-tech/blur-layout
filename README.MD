@@ -16,6 +16,12 @@ BlurLayout is what solves this issue.
 
 ## Get started
 
+### Add Dependency
+
+```kotlin
+implementation("com.avito.android:blur-layout:1.0.0")
+```
+
 ### Initialize library
 
 Initialize layout in `Application.onCreate()` providing a transformer function to apply blur effect
@@ -57,10 +63,9 @@ BlurLayout.init(
 #### Single child example
 
 ```xml
-<com.avito.android.blur_layout.BlurLayout
-    android:background="@drawable/background_rocks"
-    app:blurLayout_blurRadius="25"
-    app:blurLayout_targetChildBackgroundCornerRadius="16dp">
+
+<com.avito.android.blur_layout.BlurLayout android:background="@drawable/background_rocks"
+    app:blurLayout_blurRadius="25" app:blurLayout_targetChildBackgroundCornerRadius="16dp">
 
     <View android:background="#80FFFFFF" />
 
@@ -73,17 +78,14 @@ For the full example refer to
 #### Multiple children example
 
 ```xml
-<com.avito.android.blur_layout.BlurLayout
-    android:background="@drawable/background_gradient"
-    app:blurLayout_blurRadius="25"
-    app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+
+<com.avito.android.blur_layout.BlurLayout android:background="@drawable/background_gradient"
+    app:blurLayout_blurRadius="25" app:blurLayout_targetChildBackgroundCornerRadius="16dp"
     app:blurLayout_targetChildId="@id/blurred_background_view">
 
     <ImageView android:src="@drawable/ic_apple" />
 
-    <ImageView
-        android:id="@+id/blurred_background_view"
-        android:background="#80FFFFFF"
+    <ImageView android:id="@+id/blurred_background_view" android:background="#80FFFFFF"
         app:srcCompat="@drawable/ic_avito_logo" />
 
     <ImageView android:src="@drawable/ic_strawberry" />
@@ -98,14 +100,14 @@ For the full example refer to
 
 ```kotlin
 BlurLayout(context = this).apply {
-   // add children
+    // add children
 }.setBlurredBackgroundForTargetChild(
-   targetChild = TODO("Might be omitted if single child"),
-   blurRadius = TODO(
-      "Might be omitted if target view implements BlurLayout.BlurRadiusProvider"
-   ),
-   targetChildBackgroundCornerRadius = TODO(
-      "Might be omitted if target view implements BlurLayout.CornerRadiusProvider"
-   )
+    targetChild = TODO("Might be omitted if single child"),
+    blurRadius = TODO(
+        "Might be omitted if target view implements BlurLayout.BlurRadiusProvider"
+    ),
+    targetChildBackgroundCornerRadius = TODO(
+        "Might be omitted if target view implements BlurLayout.CornerRadiusProvider"
+    )
 )
 ```
