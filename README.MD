@@ -19,7 +19,7 @@ BlurLayout is what solves this issue.
 ### Add Dependency
 
 ```kotlin
-implementation("com.avito.android:blur-layout:1.0.0")
+implementation("com.avito.android:blur-layout:1.0.1")
 ```
 
 ### Initialize library
