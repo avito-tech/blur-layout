@@ -148,9 +148,9 @@ class BlurLayout @JvmOverloads constructor(
         val canvas = Canvas(bitmap)
 
         // Draw BlurLayout's background first
-        background.apply {
+        background?.apply {
             setBounds(0, 0, width, height)
-        }.draw(canvas)
+        }?.draw(canvas)
 
         for (child in children) {
             val isTargetChild = child == targetChild
@@ -160,9 +160,9 @@ class BlurLayout @JvmOverloads constructor(
                     child.draw(canvas)
                 } else {
                     // Draw background only for the targetChild to avoid targetChild's content blurring
-                    targetChild.background.apply {
+                    targetChild.background?.apply {
                         setBounds(0, 0, targetChild.width, targetChild.height)
-                    }.draw(canvas)
+                    }?.draw(canvas)
                 }
             }
             if (isTargetChild) break // Don't take into account views that are in front of targetChild
