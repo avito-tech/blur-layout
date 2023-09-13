@@ -64,8 +64,10 @@ BlurLayout.init(
 
 ```xml
 
-<com.avito.android.blur_layout.BlurLayout android:background="@drawable/background_rocks"
-    app:blurLayout_blurRadius="25" app:blurLayout_targetChildBackgroundCornerRadius="16dp">
+<com.avito.android.blur_layout.BlurLayout
+    android:background="@drawable/background_rocks"
+    app:blurLayout_blurRadius="25"
+    app:blurLayout_targetChildBackgroundCornerRadius="16dp">
 
     <View android:background="#80FFFFFF" />
 
@@ -78,14 +80,17 @@ For the full example refer to
 #### Multiple children example
 
 ```xml
-
-<com.avito.android.blur_layout.BlurLayout android:background="@drawable/background_gradient"
-    app:blurLayout_blurRadius="25" app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+<com.avito.android.blur_layout.BlurLayout
+    android:background="@drawable/background_gradient"
+    app:blurLayout_blurRadius="25"
+    app:blurLayout_targetChildBackgroundCornerRadius="16dp"
     app:blurLayout_targetChildId="@id/blurred_background_view">
 
     <ImageView android:src="@drawable/ic_apple" />
 
-    <ImageView android:id="@+id/blurred_background_view" android:background="#80FFFFFF"
+    <ImageView
+        android:id="@+id/blurred_background_view"
+        android:background="#80FFFFFF"
         app:srcCompat="@drawable/ic_avito_logo" />
 
     <ImageView android:src="@drawable/ic_strawberry" />
