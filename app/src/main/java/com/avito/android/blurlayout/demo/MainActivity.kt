@@ -1,10 +1,10 @@
-package com.avito.android.blur_layout.demo
+package com.avito.android.blurlayout.demo
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.avito.android.blur_layout.BlurLayout
+import com.avito.android.blurlayout.BlurLayout
 import com.google.android.renderscript.Toolkit
 
 class MainActivity : AppCompatActivity() {

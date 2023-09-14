@@ -42,7 +42,7 @@ BlurLayout.init(
 ### Use via XML
 
 1. Wrap all the elements that should be taken into account while blurring view's semitransparent
-   background with `<com.avito.android.blur_layout.BlurLayout />`.
+   background with `<com.avito.android.blurlayout.BlurLayout />`.
 2. Specify `BlurLayout` parameters.
 
    ```
@@ -64,14 +64,14 @@ BlurLayout.init(
 
 ```xml
 
-<com.avito.android.blur_layout.BlurLayout
+<com.avito.android.blurlayout.BlurLayout
     android:background="@drawable/background_rocks"
     app:blurLayout_blurRadius="25"
     app:blurLayout_targetChildBackgroundCornerRadius="16dp">
 
     <View android:background="#80FFFFFF" />
 
-</com.avito.android.blur_layout.BlurLayout>
+</com.avito.android.blurlayout.BlurLayout>
 ```
 
 For the full example refer to
@@ -80,7 +80,7 @@ For the full example refer to
 #### Multiple children example
 
 ```xml
-<com.avito.android.blur_layout.BlurLayout
+<com.avito.android.blurlayout.BlurLayout
     android:background="@drawable/background_gradient"
     app:blurLayout_blurRadius="25"
     app:blurLayout_targetChildBackgroundCornerRadius="16dp"
@@ -95,7 +95,7 @@ For the full example refer to
 
     <ImageView android:src="@drawable/ic_strawberry" />
 
-</com.avito.android.blur_layout.BlurLayout>
+</com.avito.android.blurlayout.BlurLayout>
 ```
 
 For the full example refer to

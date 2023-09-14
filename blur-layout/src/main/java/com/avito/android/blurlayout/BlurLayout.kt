@@ -1,4 +1,4 @@
-package com.avito.android.blur_layout
+package com.avito.android.blurlayout
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -14,7 +14,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.core.graphics.withTranslation
 import androidx.core.view.children
 import androidx.core.view.doOnLayout
-import com.avito.android.blur_layout.BlurLayout.Companion.onApplyBlur
+import com.avito.android.blurlayout.BlurLayout.Companion.onApplyBlur
 
 /**
  * Helper container that is able to blur background for a [targetChild] taking into account

@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace 'com.avito.android.blur_layout.demo'
+    namespace 'com.avito.android.blurlayout.demo'
     compileSdk 33
     buildToolsVersion = providers.gradleProperty("buildToolsVersion").get()
 
     defaultConfig {
-        applicationId "com.avito.android.blur_layout.demo"
+        applicationId "com.avito.android.blurlayout.demo"
         minSdk 21
         targetSdk 33
         versionCode 1
